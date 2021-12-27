@@ -1,0 +1,5 @@
+STORAGE: NONE
+RESTRICTION: || (== net6.0) (== netstandard2.0) (== netstandard2.1)
+GITHUB
+  remote: mausch/Fuchu
+    Fuchu/Fuchu.fs (8206851c5fa00a8462b7c0576ba059f00b6b3f75)
