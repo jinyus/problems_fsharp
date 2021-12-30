@@ -8,17 +8,6 @@ let vowels = "aeiou"
 let startWithVowel (str: string) : bool =
     Regex.IsMatch(str, "^(xr|yt|[aeiou]|qu)")
 
-let indexOfFirstVowel (str: string) : int option =
-    let rec inner i =
-        if (vowels.Contains(str.[i])) then
-            Some(i)
-        elif i = str.Length then
-            None
-        else
-            inner (i + 1)
-
-    inner 0
-
 // chair 2(index of firstvowel) -> airch
 let movePrefixToSuffix (index: int) (str: string) : string =
     let prefix = str.Substring(0, index)
