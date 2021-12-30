@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <Compile Include="DuplicateCount.fs" />
+    <Compile Include="LogLevel.fs" />
+    <Compile Include="TwoFer.fs" />
+    <Compile Include="PigLatin.fs" />
     <Compile Include="DuplicateCountTest.fs" />
   </ItemGroup>
 
