@@ -3,3 +3,4 @@ paket-files/
 .ionide/
 bin/
 obj/
+.fake
