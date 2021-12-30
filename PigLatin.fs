@@ -1,12 +1,13 @@
 module PigLatin
 
-open System.Text.RegularExpressions
 // https://exercism.org/tracks/fsharp/exercises/pig-latin/
+open System.Text.RegularExpressions
 
-let vowels = "aeiou"
+let startWithVowel (str: string) : bool = Regex.IsMatch(str, "^(xr|yt|[aeiou])")
 
-let startWithVowel (str: string) : bool =
-    Regex.IsMatch(str, "^(xr|yt|[aeiou]|qu)")
+let yEdgeCase (str: string) : bool = str.Length = 2 && (str.EndsWith "y")
+
+let quEdgeCase (str: string) : bool = str.StartsWith "qu"
 
 // chair 2(index of firstvowel) -> airch
 let movePrefixToSuffix (index: int) (str: string) : string =
@@ -16,16 +17,22 @@ let movePrefixToSuffix (index: int) (str: string) : string =
 
 let piglatinize (str: string) : string = str + "ay"
 
-let translate input =
-    let rec inner (str: string) =
-        printfn "processing %s" str
-
-        if startWithVowel str then
+let translate (input: string) =
+    let rec inner (start: bool) (str: string) =
+        if start && yEdgeCase str then
+            piglatinize (str |> movePrefixToSuffix 1)
+        elif not start && (str.StartsWith "y") then
+            piglatinize str
+        elif quEdgeCase str then
+            piglatinize (str |> movePrefixToSuffix 2)
+        elif startWithVowel str then
             piglatinize str
         else
-            inner (str |> movePrefixToSuffix 1)
+            inner false (str |> movePrefixToSuffix 1)
 
-    inner input
+    input.Split " "
+    |> Array.map (inner true)
+    |> String.concat " "
 
 printfn "%s" (translate "apple")
 printfn "%s" (translate "ear")
@@ -48,3 +55,4 @@ printfn "%s" (translate "xray")
 printfn "%s" (translate "yellow")
 printfn "%s" (translate "rhythm")
 printfn "%s" (translate "my") // hard
+printfn "%s" (translate "quick fast run")
