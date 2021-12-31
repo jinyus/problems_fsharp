@@ -1,9 +1,6 @@
 module PhoneNumber
 
-let digits = "0123456789"
-let letters = [| 'a' .. 'z' |]
-
-let validateLength (numbers: char []) : Result<char [], string> =
+let validateLength (numbers: char []) =
     if numbers.Length = 10 || numbers.Length = 11 then
         Ok numbers
     else
@@ -14,21 +11,13 @@ let validateLength (numbers: char []) : Result<char [], string> =
                 "more than 11 digits"
         )
 
-let validateIntlCode (numbers: char []) : Result<char [], string> =
-    if numbers.Length = 10 then
-        Ok numbers
-    elif not (Array.head numbers = '1') then
-        Error "11 digits must start with 1"
-    else
-        Ok(Array.tail numbers)
-
-let checkForLetters (numbers: char []) : Result<char [], string> =
+let checkForLetters (numbers: char []) =
     let rec inner (nums: char []) =
         match Array.tryHead nums with
         | Some head ->
-            if letters |> Array.exists ((=) head) then
+            if System.Char.IsLetter(head) then
                 Error "letters not permitted"
-            elif digits.Contains head |> not then
+            elif System.Char.IsPunctuation(head) then
                 Error "punctuations not permitted"
             else
                 inner (Array.tail nums)
@@ -36,7 +25,15 @@ let checkForLetters (numbers: char []) : Result<char [], string> =
 
     inner numbers
 
-let validateNumber (numbers: char []) : Result<char [], string> =
+let validateIntlCode (numbers: char []) =
+    if numbers.Length = 10 then
+        Ok numbers
+    elif not (Array.head numbers = '1') then
+        Error "11 digits must start with 1"
+    else
+        Ok(Array.tail numbers)
+
+let validateNumber (numbers: char []) =
     match numbers |> Array.toList with
     | '0' :: _ -> Error "area code cannot start with zero"
     | '1' :: _ -> Error "area code cannot start with one"
