@@ -14,7 +14,9 @@
     <Compile Include="PhoneNumber.fs" />
     <!-- <Compile Include="PhoneNumberTests.fs" /> -->
     <Compile Include="Anagram.fs" />
-    <Compile Include="AnagramTest.fs" />
+    <!-- <Compile Include="AnagramTest.fs" /> -->
+    <Compile Include="AtbashCipher.fs" />
+    <Compile Include="AtbashCipherTests.fs" />
   </ItemGroup>
 
   <ItemGroup>
