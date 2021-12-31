@@ -1,5 +1,7 @@
 module PhoneNumber
 
+// https://exercism.org/tracks/fsharp/exercises/phone-number
+
 let validateLength (numbers: char []) =
     if numbers.Length = 10 || numbers.Length = 11 then
         Ok numbers
