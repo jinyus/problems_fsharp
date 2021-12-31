@@ -3,11 +3,6 @@ module PhoneNumber
 let digits = "0123456789"
 let letters = [| 'a' .. 'z' |]
 
-let tryParse (str: string) =
-    match System.Int32.TryParse(str) with
-    | (true, parsedInt) -> Some parsedInt
-    | _ -> None
-
 let validateLength (numbers: char []) : Result<char [], string> =
     if numbers.Length = 10 || numbers.Length = 11 then
         Ok numbers
