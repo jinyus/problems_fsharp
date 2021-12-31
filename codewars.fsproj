@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +10,9 @@
     <Compile Include="LogLevel.fs" />
     <Compile Include="TwoFer.fs" />
     <Compile Include="PigLatin.fs" />
-    <Compile Include="DuplicateCountTest.fs" />
+    <Compile Include="PhoneNumber.fs" />
+    <Compile Include="PhoneNumberTests.fs" />
+    <!-- <Compile Include="DuplicateCountTest.fs" /> -->
   </ItemGroup>
 
   <ItemGroup>
