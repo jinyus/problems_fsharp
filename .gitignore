@@ -4,3 +4,4 @@ paket-files/
 bin/
 obj/
 .fake
+test.fs
