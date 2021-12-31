@@ -13,7 +13,7 @@ let alphabetRev =
     |> List.zip [ 'a' .. 'z' ]
     |> Map.ofList
 
-let find (map: Map<char, char>) (c: char) =
+let find (map: Map<char, char>) c =
     map.TryFind c |> Option.defaultValue c |> string
 
 let encode (str: string) =
@@ -21,7 +21,7 @@ let encode (str: string) =
     |> Seq.filter Char.IsLetterOrDigit
     |> Seq.map (fun c -> find alphabet c)
     |> Seq.chunkBySize 5
-    |> Seq.map System.String.Concat
+    |> Seq.map String.Concat
     |> String.concat " "
 
 let decode (str: string) =
