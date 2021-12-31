@@ -16,7 +16,11 @@
     <Compile Include="Anagram.fs" />
     <!-- <Compile Include="AnagramTest.fs" /> -->
     <Compile Include="AtbashCipher.fs" />
-    <Compile Include="AtbashCipherTests.fs" />
+    <!-- <Compile Include="AtbashCipherTests.fs" /> -->
+
+    <Compile Include="KindergartenGarden.fs" />
+    <Compile Include="KindergartenGardenTests.fs" />
+    
   </ItemGroup>
 
   <ItemGroup>
