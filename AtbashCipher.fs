@@ -33,5 +33,8 @@ let decode (str: string) =
 // let encode2 c =
 //     if Char.IsDigit c then c else char(int('z') + int('a') - int(c))
 
+// let decode2 (code: string) = (encode code).Replace(" ", "")
+
 encode "ab" |> ignore
 encode "Testing,1 2 3, testing." |> ignore
+// decode2 "vcvix rhn" |> ignore
