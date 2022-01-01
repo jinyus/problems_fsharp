@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Utils.fs" />
     <Compile Include="DuplicateCount.fs" />
     <!-- <Compile Include="DuplicateCountTest.fs" /> -->
     <Compile Include="LogLevel.fs" />
@@ -19,7 +20,10 @@
     <!-- <Compile Include="AtbashCipherTests.fs" /> -->
 
     <Compile Include="KindergartenGarden.fs" />
-    <Compile Include="KindergartenGardenTests.fs" />
+    <!-- <Compile Include="KindergartenGardenTests.fs" /> -->
+
+    <Compile Include="ProteinTranslation.fs" />
+    <Compile Include="ProteinTranslationTests.fs" />
     
   </ItemGroup>
 
