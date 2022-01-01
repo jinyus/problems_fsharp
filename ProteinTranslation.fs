@@ -1,6 +1,5 @@
 module ProteinTranslation
 
-open Utils
 open System
 
 type Protein =
@@ -36,7 +35,6 @@ let condonToProtein (c: string) =
 let proteins (rna: string) =
     rna
     |> Seq.chunkBySize 3
-    // |> Seq.map (fun ca -> condonToProtein (String.Concat ca))
     |> Seq.map (String.Concat >> condonToProtein)
     |> Seq.takeWhile Option.isSome
     |> Seq.map (Option.get >> string)
