@@ -3,32 +3,32 @@ import re
 
 fact_re = r'\[<Fact.*?\]'
 list_arg_re = r'= \[(.*?)\]'
-string_arg_re = r'(decode|encode) (".*?")'
+string_arg_re = r'(proteins) (".*?")'
 second_arg_re = r'(".*?") \|>'
-# expected_re = r'equal \[(.*?)\]|Empty'
-expected_re = r'equal (".*?")'
+expected_re = r'equal (\[.*?\])|Empty'
+# expected_re = r'equal (".*?")'
 desc_re = r'let "(.*?)"'
 method_name = 'decode'
-file_name = 'AtbashCipherTests'
+file_name = 'ProteinTranslationTests'
 
 test_head = f"""
 module {file_name} =
     open Fuchu
-    open AtbashCipher
+    open ProteinTranslation
 
 
     let suite =
         testList
-            "AtbashCipher Suite"
+            "ProteinTranslation Suite"
             [ testList
-                "AtbashCipher Encode tests"
+                "ProteinTranslation Translate tests"
                 [ 
 """
 
 test_tail = """] ]
 
-        [<EntryPoint>]
-        let main _ = run suite
+            [<EntryPoint>]
+            let main _ = run suite
 """
 
 test_case = """
@@ -48,7 +48,7 @@ with open('test.fs') as inp:
         if 'equal' in expected_match.group(0):
             expected = expected_match.group(1)
         else:
-            expected = '""'
+            expected = '[]'
 
         # list_arg = f'[{re.search(list_arg_re, c).group(1)}]'
         string_arg_match = re.search(string_arg_re, c)
