@@ -41,4 +41,5 @@ let proteins (rna: string) =
     |> Seq.toList
 
 
+
 // proteins "AUG"
