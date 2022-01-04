@@ -7,7 +7,7 @@ let abbreviate (phrase: string) =
         .ToUpper()
         .Split([| ' '; '-' |], StringSplitOptions.RemoveEmptyEntries)
     |> Array.map (Seq.filter Char.IsLetter >> Seq.head)
-    |> System.String.Concat
+    |> String.Concat
 
 let abbreviate2 (phrase: string) =
     (phrase.ToUpper()
@@ -19,7 +19,7 @@ let abbreviate2 (phrase: string) =
      |> System.String.Concat)
         .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     |> Array.map (fun s -> s.[0])
-    |> System.String.Concat
+    |> String.Concat
 
 
 abbreviate2 "The Road _Not_ Taken" |> printfn "%s"
