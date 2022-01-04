@@ -3,8 +3,9 @@ module Acronym
 open System
 
 let abbreviate (phrase: string) =
-    phrase.ToUpper().Split [| ' '; '-' |]
-    |> Array.filter (String.exists Char.IsLetter)
+    phrase
+        .ToUpper()
+        .Split([| ' '; '-' |], StringSplitOptions.RemoveEmptyEntries)
     |> Array.map (Seq.filter Char.IsLetter >> Seq.head)
     |> System.String.Concat
 
