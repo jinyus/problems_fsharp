@@ -21,6 +21,11 @@ let abbreviate2 (phrase: string) =
     |> Array.map (fun s -> s.[0])
     |> String.Concat
 
+let abbreviate3 (phrase: string) =
+    phrase.ToLower()
+    |> System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase
+    |> String.filter System.Char.IsUpper
+
 
 abbreviate2 "The Road _Not_ Taken" |> printfn "%s"
 
