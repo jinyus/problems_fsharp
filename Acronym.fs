@@ -3,6 +3,12 @@ module Acronym
 open System
 
 let abbreviate (phrase: string) =
+    phrase.ToUpper().Split [| ' '; '-' |]
+    |> Array.filter (String.exists Char.IsLetter)
+    |> Array.map (Seq.filter Char.IsLetter >> Seq.head)
+    |> System.String.Concat
+
+let abbreviate2 (phrase: string) =
     (phrase.ToUpper()
      |> Seq.map (fun c ->
          if Char.IsLetter c || c = ''' then
@@ -15,6 +21,9 @@ let abbreviate (phrase: string) =
     |> System.String.Concat
 
 
-abbreviate "The Road _Not_ Taken"
+abbreviate2 "The Road _Not_ Taken" |> printfn "%s"
+
 abbreviate "Something - I made up from thin air"
-abbreviate "Halley's Comet"
+|> printfn "%s"
+
+abbreviate "Halley's Comet" |> printfn "%s"
