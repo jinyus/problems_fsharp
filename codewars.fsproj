@@ -27,7 +27,13 @@
 
     <Compile Include="ProteinTranslation.fs" />
     <!-- <Compile Include="ProteinTranslationTests.fs" /> -->
-    <Compile Include="ProteinTest.fs" />
+    <!-- <Compile Include="ProteinTest.fs" /> -->
+
+    <Compile Include="Isogram.fs" />
+    <!-- <Compile Include="IsogramTest.fs"/> -->
+
+    <Compile Include="Acronym.fs" />
+    <Compile Include="AcronymTests.fs" />
 
     
   </ItemGroup>
