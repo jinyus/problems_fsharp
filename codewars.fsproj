@@ -33,7 +33,10 @@
     <!-- <Compile Include="IsogramTest.fs"/> -->
 
     <Compile Include="Acronym.fs" />
-    <Compile Include="AcronymTests.fs" />
+    <!-- <Compile Include="AcronymTests.fs" /> -->
+
+    <Compile Include="Series.fs" />
+    <Compile Include="SeriesTests.fs" />
 
     
   </ItemGroup>
