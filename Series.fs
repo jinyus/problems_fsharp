@@ -12,6 +12,16 @@ let slices (str: string) (length: int) =
         | [] -> None
         | x -> Some x)
 
+let slices2 (str: string) (length: int) =
+    if length < 1 || length > str.Length then
+        None
+    else
+        str
+        |> Seq.windowed length
+        |> Seq.map System.String.Concat
+        |> Seq.toList
+        |> Some
+
 
 slices "35" 2 |> printfn "%A"
 slices "9142" 2 |> printfn "%A"
