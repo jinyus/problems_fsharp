@@ -36,7 +36,10 @@
     <!-- <Compile Include="AcronymTests.fs" /> -->
 
     <Compile Include="Series.fs" />
-    <Compile Include="SeriesTests.fs" />
+    <!-- <Compile Include="SeriesTests.fs" /> -->
+
+    <Compile Include="Pangram.fs" />
+    <Compile Include="PangramTests.fs" />
 
     
   </ItemGroup>
