@@ -1,5 +1,7 @@
 module Series
 
+// https://exercism.org/tracks/fsharp/exercises/series
+
 let slices (str: string) (length: int) =
     if length < 1 || str.Trim() = "" then
         None

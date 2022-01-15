@@ -1,5 +1,7 @@
 module Acronym
 
+// https://exercism.org/tracks/fsharp/exercises/acronym
+
 open System
 
 let abbreviate (phrase: string) =
