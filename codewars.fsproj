@@ -42,7 +42,10 @@
     <!-- <Compile Include="PangramTests.fs" /> -->
 
     <Compile Include="ArmstrongNumbers.fs" />
-    <Compile Include="ArmstrongNumbersTests.fs" />
+    <!-- <Compile Include="ArmstrongNumbersTests.fs" /> -->
+
+    <Compile Include="Leap.fs" />
+    <Compile Include="LeapTests.fs" />
 
     
   </ItemGroup>
