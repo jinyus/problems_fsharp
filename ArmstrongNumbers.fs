@@ -11,5 +11,5 @@ let isArmstrongNumber (number: int) : bool =
     let length = digits.Length
 
     digits
-    |> List.fold (fun prev i -> prev + pown i length) 0
+    |> List.sumBy (fun i -> pown i length)
     |> (=) number
