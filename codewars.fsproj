@@ -39,7 +39,10 @@
     <!-- <Compile Include="SeriesTests.fs" /> -->
 
     <Compile Include="Pangram.fs" />
-    <Compile Include="PangramTests.fs" />
+    <!-- <Compile Include="PangramTests.fs" /> -->
+
+    <Compile Include="ArmstrongNumbers.fs" />
+    <Compile Include="ArmstrongNumbersTests.fs" />
 
     
   </ItemGroup>

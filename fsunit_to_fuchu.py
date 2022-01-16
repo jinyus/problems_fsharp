@@ -1,6 +1,7 @@
 
 import re
 
+skip_re = r'\(Skip.*?\)'
 fact_re = r'\[<Fact.*?\]'
 list_arg_re = r'= \[(.*?)\]'
 string_arg_re = r'(proteins) (".*?")'
